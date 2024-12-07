@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kathir Academy - Account Deletion</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: #fff;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Background circles for design */
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .circle.small {
+            width: 80px;
+            height: 80px;
+            top: 10%;
+            left: 20%;
+        }
+
+        .circle.medium {
+            width: 150px;
+            height: 150px;
+            bottom: 10%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+
+        .circle.large {
+            width: 200px;
+            height: 200px;
+            top: 20%;
+            right: 30%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 1.5s ease;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .delete-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #ff4b5c;
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .delete-button:hover {
+            background-color: #ff2e45;
+            transform: scale(1.05);
+        }
+
+        .email-text {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: #ffeb3b;
+            font-weight: 500;
+            display: none;
+            animation: fadeInEmail 1s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInEmail {
+            from { opacity: 0; transform: scale(0.5); }
+            to { opacity: 1; transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Design Elements -->
+    <div class="circle small"></div>
+    <div class="circle medium"></div>
+    <div class="circle large"></div>
+
+    <div class="container">
+        <h1>Kathir Academy</h1>
+        <p>Let's Learn to Succeed</p>
+        <button class="delete-button" onclick="showEmail()">Request Account Deletion</button>
+        <div class="email-text" id="email-text">
+            Send an email to: <strong>tutormaster87@gmail.com</strong> to delete your account.
+        </div>
+    </div>
+
+    <script>
+        function showEmail() {
+            const emailText = document.getElementById('email-text');
+            emailText.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
